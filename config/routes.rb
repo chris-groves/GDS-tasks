@@ -2,8 +2,8 @@
 
 Rails.application.routes.draw do
   get "home/index"
-  root "home#index"
+  root "tasks#index"
 
-  resources :tasks, only: %i[index new create]
+  resources :tasks, only: %i[index new create show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,1 +1,7 @@
 <h1 class="govuk-heading-xl">Tasks</h1>
+
+<ul class="govuk-list govuk-!-font-size-27 govuk-list--bullet">
+  <% @tasks.each do |task| %>
+   <li><a href="/tasks/<%= task.id %>" class="govuk-link"><%= task.description %></a></li>
+  <% end %>
+</ul>

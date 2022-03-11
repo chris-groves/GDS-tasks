@@ -1,0 +1,4 @@
+<%= form_for @task, builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+  <%= f.govuk_text_field :description, label: { text: 'Task' }, hint: { text: 'Enter a new task' } %>
+  <%= f.govuk_submit 'Submit' %>
+<% end %>
