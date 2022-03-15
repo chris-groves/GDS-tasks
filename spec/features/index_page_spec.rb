@@ -15,4 +15,11 @@ feature "Main page" do
 
     expect(page).to have_content("Read a book")
   end
+
+  scenario "Link to add new task" do
+    visit("/tasks")
+    click_on("Add New Task")
+
+    expect(page).to have_content("New Task")
+  end
 end
