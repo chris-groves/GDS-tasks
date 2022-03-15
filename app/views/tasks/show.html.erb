@@ -2,12 +2,14 @@
   <li><%= @task.description%></li>
 </ul>
 
-<%= form_for @task, url: "/tasks/#{@task.id}/edit", method: :get , builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
-  <%= f.govuk_submit 'Edit task' %>
-<% end %>
+<div class="govuk-button-group">
+  <%= form_for @task, url: "/tasks/#{@task.id}/edit", method: :get , builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+    <%= f.govuk_submit 'Edit task' %>
+  <% end %>
 
-<%= form_for @task, url: "/tasks/#{@task.id}", method: :delete , builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
-  <%= f.govuk_submit 'Delete task', warning: true %>
-<% end %>
+  <%= form_for @task, url: "/tasks/#{@task.id}", method: :delete , builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+    <%= f.govuk_submit 'Delete task', warning: true %>
+  <% end %>
+</div>
 
 <a href="/tasks" class="govuk-back-link">View All Tasks</a>
