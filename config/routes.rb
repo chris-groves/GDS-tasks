@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "home/index"
   root "tasks#index"
 
-  resources :tasks, only: %i[index new create show destroy]
+  resources :tasks
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

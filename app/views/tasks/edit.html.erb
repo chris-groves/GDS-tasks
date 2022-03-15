@@ -1,0 +1,6 @@
+<h1 class="govuk-heading-xl">Edit Task</h1>
+
+<%= form_for @task, builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+  <%= f.govuk_text_field :description, label: { text: 'Edit Task' }, hint: { text: 'Add new task description' } %>
+  <%= f.govuk_submit 'Submit' %>
+<% end %>
