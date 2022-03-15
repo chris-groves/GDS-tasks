@@ -27,4 +27,20 @@ RSpec.describe "Tasks", type: :request do
       expect { create_new_task }.to change(Task, :count).by(1)
     end
   end
+
+  describe "DELETE /tasks" do
+    let(:task) { Task.create!(description: "Read") }
+    let(:delete_task) { delete "/tasks/#{task.id}" }
+
+    it "returns http success" do
+      task
+      delete "/tasks/#{task.id}"
+      expect(response).to have_http_status(:redirect)
+    end
+
+    it "creates a new task" do
+      task
+      expect { delete_task }.to change(Task, :count).by(-1)
+    end
+  end
 end

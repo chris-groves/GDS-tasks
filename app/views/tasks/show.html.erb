@@ -2,4 +2,8 @@
   <li><%= @task.description%></li>
 </ul>
 
+<%= form_for @task, url: "/tasks/#{@task.id}", method: :delete , builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+  <%= f.govuk_submit 'Delete task', warning: true %>
+<% end %>
+
 <a href="/tasks" class="govuk-back-link">View All Tasks</a>
