@@ -1,6 +1,19 @@
-<h1 class="govuk-heading-xl">New Task</h1>
+<div class="govuk-width-container">
 
-<%= form_for @task, builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
-  <%= f.govuk_text_field :description, label: { text: 'Task' }, hint: { text: 'Enter a new task' } %>
-  <%= f.govuk_submit 'Submit' %>
-<% end %>
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">New Task</h1>
+      </div>
+    </div>
+    <%= form_for @task, builder: GOVUKDesignSystemFormBuilder::FormBuilder do |f| %>
+      <%= f.govuk_text_field :description, label: { text: 'Task' }, hint: { text: 'Enter a new task' } %>
+      <%= f.govuk_submit 'Submit' %>
+    <% end %>
+  </main>
+</div>
+
+
+
+
